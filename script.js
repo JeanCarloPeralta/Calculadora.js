@@ -1,61 +1,89 @@
-function calculadora(){
-    
-let resultado = document.getElementById('resultado');
-let siete = document.getElementById('siete');
-let ocho = document.getElementById('ocho');
-let nueve = document.getElementById('nueve');
-let division = document.getElementById('division');
-let cuatro = document.getElementById('cuatro');
-let cinco = document.getElementById('cinco');
-let seis = document.getElementById('seis');
-let multiplicacion = document.getElementById('multiplicacion');
-let tres = document.getElementById('tres');
-let dos = document.getElementById('dos');
-let uno = document.getElementById('uno');
-let igual = document.getElementById('igual');
-let reset = document.getElementById('reset');
+function takeValue(x) {
+    console.log("Numero")
+    console.log(x)
+	document.getElementById('Result').innerHTML += x;
+}
+
+function clearInput() {
+	document.getElementById('Result').innerHTML = "";
+}
+
+function calculateResult() {
+	let result = eval(document.getElementById('Result').innerHTML);
+	document.getElementById('Result').innerHTML = result;
+}
+
+let coma = document.getElementById('coma');
 let cero = document.getElementById('cero');
-let suma = document.getElementById('suma');
-let resta = document.getElementById('resta');
+let one = document.getElementById('one');
+let two = document.getElementById('two');
+let three = document.getElementById('three');
+let four = document.getElementById('four');
+let five = document.getElementById('five');
+let six = document.getElementById('six');
+let seven = document.getElementById('seven');
+let eight = document.getElementById('eight');
+let nine = document.getElementById('nine');
 
-uno.onclick = function (e) {
-    resultado.textContent = resultado.textContent + '1';
-}
+let plus = document.getElementById('plus');
+let minus = document.getElementById('minus');
+let divide = document.getElementById('divide');
+let multiply = document.getElementById('multiply');
+let equal = document.getElementById('equal');
+let deleteN = document.getElementById('Delete');
 
-dos.onclick = function (e) {
-    resultado.textContent = resultado.textContent + '2';
-}
 
-tres.onclick = function (e) {
-    resultado.textContent = resultado.textContent + '3';
-}
+cero.addEventListener("click", function(){
+    takeValue(0);
+})
+coma.addEventListener("click", function(){
+    takeValue(".");
+})
+one.addEventListener("click", function(){
+    takeValue(1);
+})
+two.addEventListener("click", function(){
+    takeValue(2);
+})
+three.addEventListener("click", function(){
+    takeValue(3);
+})
+four.addEventListener("click", function(){
+    takeValue(4);
+})
+five.addEventListener("click", function(){
+    takeValue(5);
+})
+six.addEventListener("click", function(){
+    takeValue(6);
+})
+seven.addEventListener("click", function(){
+    takeValue(7);
+})
+eight.addEventListener("click", function(){
+    takeValue(8);
+})
+nine.addEventListener("click", function(){
+    takeValue(9);
+})
+plus.addEventListener("click", function(){
+    takeValue("+");
+})
+minus.addEventListener("click", function(){
+    takeValue("-");
+})
+multiply.addEventListener("click", function(){
+    takeValue("*");
+})
+divide.addEventListener("click", function(){
+    takeValue("/");
+})
 
-cuatro.onclick = function (e) {
-    resultado.textContent = resultado.textContent + '4';
-}
 
-cinco.onclick = function (e) {
-    resultado.textContent = resultado.textContent + '5';
-}
+equal.addEventListener("click", function(){
+    calculateResult();
+})
 
-seis.onclick = function (e) {
-    resultado.textContent = resultado.textContent + '6';
-}
-
-siete.onclick = function (e) {
-    resultado.textContent = resultado.textContent + '7';
-}
-
-ocho.onclick = function (e) {
-    resultado.textContent = resultado.textContent + '8';
-}
-
-nueve.onclick = function (e) {
-    resultado.textContent = resultado.textContent + '9';
-}
-
-cero.onclick = function (e) {
-    resultado.textContent = resultado.textContent + '0';
-}
-
-}
+deleteN.addEventListener("click", function(){
+    clearInput()
+})
